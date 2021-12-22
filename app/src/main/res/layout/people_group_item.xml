@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="54dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="2dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <androidx.coordinatorlayout.widget.CoordinatorLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_gravity="center">
+
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/img_addedUser"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:background="@color/grey"
+               android:src="@drawable/ic_user"
+               android:scaleType="center" />
+
+           <ImageView
+               android:id="@+id/img_cancel"
+               android:layout_width="13dp"
+               android:layout_height="13dp"
+               android:src="@drawable/ic_cancel"
+               app:layout_anchor="@id/img_user"
+               app:layout_anchorGravity="end|bottom"
+               android:layout_marginBottom="7dp"
+               android:layout_marginEnd="3dp"
+               />
+       </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+       <TextView
+           android:id="@+id/tv_userName"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="UserName"
+           android:maxLines="1"
+           android:textColor="@color/textColor"
+           android:ellipsize="end"
+           android:textStyle="bold"/>
+   </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

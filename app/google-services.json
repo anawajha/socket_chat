@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554538359123",
+    "project_id": "babble-a036a",
+    "storage_bucket": "babble-a036a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554538359123:android:821629f188f9cfe3e869a6",
+        "android_client_info": {
+          "package_name": "com.anawajha.babble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554538359123-61nom3686hkdh4v9bnk36pcep4lpn9fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl9aL8I7t1_MwAnrrc1pCc60eyNRIO2Js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554538359123-61nom3686hkdh4v9bnk36pcep4lpn9fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
