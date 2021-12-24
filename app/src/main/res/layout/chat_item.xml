@@ -27,6 +27,7 @@
         android:layout_marginStart="8dp">
 
         <TextView
+            android:id="@+id/tv_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -37,6 +38,7 @@
             android:gravity="start|center" />
 
         <TextView
+            android:id="@+id/tv_lastMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10sp"
@@ -44,7 +46,6 @@
             android:text="saaho saleem kefk salom"
             android:layout_weight="1"
             android:gravity="start|top" />
-
     </LinearLayout>
 
 

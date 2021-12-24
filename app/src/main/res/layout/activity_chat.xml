@@ -126,14 +126,14 @@
     <RelativeLayout
         android:id="@+id/lo_message"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="45dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp">
 
         <ImageView
-            android:id="@+id/btn_send_image"
+            android:id="@+id/btn_captureImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -142,32 +142,49 @@
             android:padding="5dp"
             android:src="@drawable/ic_camera" />
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/btn_chooseImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="5dp"
+            android:layout_toEndOf="@id/btn_captureImage"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_gallery" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/round_edit_image"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/btn_send_image"
-            android:orientation="horizontal">
+            android:layout_toEndOf="@+id/btn_chooseImage"
+            android:background="@color/purple"
+            android:backgroundTint="@color/purple"
+            app:cardCornerRadius="30dp">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
             <EditText
                 android:id="@+id/ed_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="Text message here..."
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:inputType="textLongMessage"
                 android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp"
+                android:layout_toStartOf="@+id/btn_send"
+                android:hint="Text message here..."
+                android:inputType="textLongMessage"
                 android:maxLines="3"
-                android:layout_toStartOf="@+id/btn_send" />
+                android:paddingStart="10sp"
+                android:backgroundTint="@color/purple"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
 
             <ImageView
@@ -178,9 +195,10 @@
                 android:padding="5dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_send" />
         </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

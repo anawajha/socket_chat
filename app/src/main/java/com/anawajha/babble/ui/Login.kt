@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
         }
     }
 
-   private fun validation(){
+    private fun validation(){
        binding.edEmail.doOnTextChanged { text, start, before, count ->
            if (text!!.contains(".") && text.contains("@")){
                binding.tfEmail.error = ""
