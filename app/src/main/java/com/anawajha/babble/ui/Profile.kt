@@ -41,7 +41,6 @@ class Profile : AppCompatActivity() {
             updateProfile()
         }
 
-
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()

@@ -22,6 +22,7 @@ import java.lang.Exception
 class RegisterService {
 
     companion object{
+
         fun register(view: View,context: Context, email:String, password:String):Boolean{
             val sharedPref = context.getSharedPreferences("login",Context.MODE_PRIVATE)
             val auth = Firebase.auth
@@ -40,12 +41,8 @@ class RegisterService {
         Helpers.showSnackBar(view,"${it.localizedMessage}")
         isSuccessful = false
     }
-            return false
+            return isSuccessful
         }// register function
-
-
-
-
 
         fun completeProfile(view: View, context: Context, name:String, userImage:Uri){
             val dialog = ProgressDialog(context).apply {
@@ -60,6 +57,7 @@ class RegisterService {
                    setDisplayName(name)
                    setPhotoUri(userImage)
                }
+
                 it.updateProfile(profileUpdates).addOnCompleteListener {
                     if (it.isSuccessful){
                         dialog.dismiss()

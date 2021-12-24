@@ -17,8 +17,6 @@ class Helpers{
                 show()
             } // show snackBar
 
-
-
         }
     }
 }

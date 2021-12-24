@@ -15,7 +15,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 class CompleteProfile : AppCompatActivity(){
     private lateinit var binding:ActivityCompleteProfileBinding
     lateinit var currentPhotoPath: String
-    private lateinit var imageUri: Uri
+    private  var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ class CompleteProfile : AppCompatActivity(){
         val name = binding.edFullName.text.toString()
         if (name.isNotEmpty() && name.length > 5){
             if (imageUri != null){
-                RegisterService.completeProfile(binding.root,this,name,imageUri)
+                RegisterService.completeProfile(binding.root,this,name,imageUri!!)
             }else{
                 Helpers.showSnackBar(binding.root,"Please choose profile photo")
             }

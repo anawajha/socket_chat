@@ -20,7 +20,6 @@ class Login : AppCompatActivity() {
 
         isLogin()
 
-
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, Register::class.java))
             finish()
@@ -71,13 +70,8 @@ class Login : AppCompatActivity() {
         val auth = Firebase.auth
         val sharedPrf = this.getSharedPreferences("login",Context.MODE_PRIVATE)
         if (sharedPrf.getBoolean("isLogin",false)){
-            if ( auth.currentUser?.photoUrl == null || auth.currentUser?.displayName == null){
-                startActivity(Intent(this,CompleteProfile::class.java))
-                finish()
-            }else{
                 startActivity(Intent(this,MainActivity::class.java))
                 finish()
-            }
         }
 
     }
