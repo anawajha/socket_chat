@@ -6,8 +6,6 @@ import com.google.android.material.snackbar.BaseTransientBottomBar.ANIMATION_MOD
 import com.google.android.material.snackbar.Snackbar
 
 class Helpers{
-
-
     companion object{
         fun showSnackBar(view: View, title:String){
             Snackbar.make(view, title, Snackbar.LENGTH_LONG).apply {
@@ -15,8 +13,7 @@ class Helpers{
                 setBackgroundTint(Color.parseColor("#E30425"))
                 setTextColor(Color.parseColor("#FFFFFF"))
                 show()
-            } // show snackBar
-
-        }
-    }
-}
+            }// apply
+        }// show snackBar
+    }// companion object
+}// Helpers class

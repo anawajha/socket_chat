@@ -5,17 +5,18 @@
       <map>
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/drawable/ic_camera.xml" value="0.181786941580756" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/drawable/ic_gallery.xml" value="0.181786941580756" />
-        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_chat.xml" value="0.16" />
+        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_complete_profile.xml" value="0.152" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_create_group.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_login.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_profile.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_register.xml" value="0.17291666666666666" />
-        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/chat_item.xml" value="0.536" />
+        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/chat_item.xml" value="0.176" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/people_group_item.xml" value="0.536" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/pick_image_dialog.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/switch_item.xml" value="0.17291666666666666" />
+        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/menu/main_menu.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/xml/file_paths.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/xml/network_security_config.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BulletChat/app/src/main/res/drawable-xhdpi/ic_back_white.xml" value="0.18368055555555557" />

@@ -14,7 +14,6 @@ import com.anawajha.babble.shared.Constants
 
 class Register : AppCompatActivity() {
     private lateinit var binding:ActivityRegisterBinding
-    private lateinit var dialog:ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class Register : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             register()
         }
-    }
+    }// onCreate
 
     private fun register() {
         val email = binding.edEmail.text.toString()
@@ -52,7 +51,7 @@ class Register : AppCompatActivity() {
         } else {
             binding.tfEmail.error = "Invalid email"
         }
-    }
+    }// register
 
     private fun validation(){
         binding.edEmail.doOnTextChanged { text, start, before, count ->
@@ -61,7 +60,7 @@ class Register : AppCompatActivity() {
             }else{
                 binding.tfEmail.error = "Invalid email"
             }
-        }
+        }// doOnTextChanged
 
         binding.edPassword.doOnTextChanged { text, start, before, count ->
             if (text!!.length >= 8 ){
@@ -69,9 +68,6 @@ class Register : AppCompatActivity() {
             }else{
                 binding.tfPassword.error = "Password should be more than 8 character"
             }
-        }
-    }
-
-
-
-}
+        }// doOnTextChanged
+    }// validation
+}// Register

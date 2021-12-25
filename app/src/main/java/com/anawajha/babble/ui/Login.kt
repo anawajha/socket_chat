@@ -13,6 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -28,7 +29,7 @@ class Login : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             login()
         }
-    }
+    }// onCreate
 
     private fun login() {
         val email = binding.edEmail.text.toString()
@@ -46,7 +47,7 @@ class Login : AppCompatActivity() {
         } else {
             binding.tfEmail.error = "Invalid email"
         }
-    }
+    }// login
 
     private fun validation(){
        binding.edEmail.doOnTextChanged { text, start, before, count ->
@@ -55,7 +56,7 @@ class Login : AppCompatActivity() {
            }else{
                binding.tfEmail.error = "Invalid email"
            }
-       }
+       }// doOnTextChanged
 
        binding.edPassword.doOnTextChanged { text, start, before, count ->
            if (count > 8 ){
@@ -63,8 +64,8 @@ class Login : AppCompatActivity() {
            }else{
                binding.tfPassword.error = "Password should be more than 8 character"
            }
-       }
-   }
+       }// doOnTextChanged
+   }// validation
 
     private fun isLogin(){
         val auth = Firebase.auth
@@ -73,7 +74,5 @@ class Login : AppCompatActivity() {
                 startActivity(Intent(this,MainActivity::class.java))
                 finish()
         }
-
-    }
-
-}
+    }// isLogin
+}// Login

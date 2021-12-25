@@ -6,11 +6,14 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.anawajha.babble.R
 import com.anawajha.babble.databinding.ActivityProfileBinding
 import com.anawajha.babble.shared.Helpers
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
@@ -31,10 +34,10 @@ class Profile : AppCompatActivity() {
             binding.edName.setText(user.displayName)
             binding.edEmail.setText(user.email)
             binding.edPhoneUmber.setText(user.phoneNumber)
+            Log.d("Test", user.photoUrl.toString())
            if (!user.isEmailVerified){
                binding.edEmail.error = "Not verified"
            }
-
         }
 
         binding.btnSave.setOnClickListener {
@@ -52,7 +55,7 @@ class Profile : AppCompatActivity() {
                 .compress(1024)
                 .start()
         }
-    }
+    }// onCreate
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -62,7 +65,7 @@ class Profile : AppCompatActivity() {
         }else if (resultCode == ImagePicker.RESULT_ERROR){
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         }
-    }
+    }// onActivityResult
 
     private fun updateProfile(){
         val dialog = ProgressDialog(this).apply {
@@ -89,6 +92,6 @@ class Profile : AppCompatActivity() {
 
         }
         user?.reload()
-    }
+    }// updateProfile
 
-}
+}// class

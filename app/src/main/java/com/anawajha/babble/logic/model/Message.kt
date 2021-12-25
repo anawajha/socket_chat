@@ -10,10 +10,10 @@ data class Message(var source_id:String, var destination_id:String ,var message:
         message.put(destination_id,this.destination_id)
         message.put("message",this.message)
         return message
-    }
+    }// encode
 
     fun decode(obj:JSONObject):Message{
         return Message(obj.getString("source_id"),obj.getString("destination_id").toString(),obj.get("message"))
-    }
+    }// decode
 
-}
+}// Message class

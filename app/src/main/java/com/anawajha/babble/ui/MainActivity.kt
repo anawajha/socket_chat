@@ -24,6 +24,5 @@ class MainActivity : AppCompatActivity() {
         binding.imgGoToProfile.setOnClickListener {
             startActivity(Intent(this, Profile::class.java))
         }
-
-    }
-}
+    }// onCreate
+}// MainActivity calss

@@ -15,13 +15,13 @@ data class UserAddedAdapter(var activity: Context, var users:ArrayList<User>):Re
             var userName = binding.tvUserName
             var userImage = binding.imgAddedUser
             var imgCancel = binding.imgCancel
-    }
+    }// UserAddedViewHolder class
 
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAddedViewHolder {
         val binding = PeopleGroupItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return UserAddedViewHolder(binding)
-    }
+    }// onCreateViewHolder
 
     override fun onBindViewHolder(holder: UserAddedViewHolder, position: Int) {
         holder.userName.text = users[position].name
@@ -30,9 +30,9 @@ data class UserAddedAdapter(var activity: Context, var users:ArrayList<User>):Re
         holder.imgCancel.setOnClickListener {
             users.removeAt(position)
         }
-    }
+    }// onBindViewHolder
 
     override fun getItemCount(): Int {
         return users.size
-    }
-}
+    }// getItemCount
+}// UserAddedAdapter

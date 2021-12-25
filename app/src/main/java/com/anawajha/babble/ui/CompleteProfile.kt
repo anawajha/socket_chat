@@ -14,7 +14,6 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 
 class CompleteProfile : AppCompatActivity(){
     private lateinit var binding:ActivityCompleteProfileBinding
-    lateinit var currentPhotoPath: String
     private  var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,8 +31,7 @@ class CompleteProfile : AppCompatActivity(){
                 .compress(1024)
                 .start()
         }
-
-    }
+    }// onCreate
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -45,7 +43,7 @@ class CompleteProfile : AppCompatActivity(){
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         }
-    }
+    }// onActivityResult
 
     private fun completeProfile(){
         val name = binding.edFullName.text.toString()
@@ -58,6 +56,5 @@ class CompleteProfile : AppCompatActivity(){
         }else{
             binding.tfFullName.error = "Please Enter a valid name"
         }
-    }
-
-}
+    }// completeProfile
+}// CompleteProfile class
