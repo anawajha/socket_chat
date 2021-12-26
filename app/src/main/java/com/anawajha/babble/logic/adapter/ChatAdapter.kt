@@ -2,27 +2,20 @@ package com.anawajha.babble.logic.adapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
-import android.content.res.ColorStateList
-import android.content.res.Resources
-import android.graphics.Color
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.anawajha.babble.R
 import com.anawajha.babble.databinding.MessageItemBinding
 import com.anawajha.babble.logic.model.Message
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import android.widget.FrameLayout
 import com.anawajha.babble.logic.socket.ImageOperations
-import com.anawajha.babble.ui.Chat
 
 
-class MessageAdapter(var activity: Activity, var messages:ArrayList<Message>):RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class ChatAdapter(var activity: Activity, var messages:ArrayList<Message>):RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
     class MessageViewHolder(binding:MessageItemBinding):RecyclerView.ViewHolder(binding.root){
         var imageMessage = binding.imgMessage
         var message = binding.tvMessage

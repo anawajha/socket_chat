@@ -6,7 +6,6 @@ import org.json.JSONObject
 data class Message(var source_id:String, var destination_id:String ,var message:String? , var imageMessage:ByteArray?){
 
     fun encode():JSONObject{
-
         var message= JSONObject()
         message.put(Constants.SOURCE_ID,this.source_id)
         message.put(Constants.DESTINATION_ID,this.destination_id)

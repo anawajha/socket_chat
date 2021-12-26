@@ -105,7 +105,7 @@ class Profile : AppCompatActivity() {
 
 
     private fun uploadImage(uri:Uri){
-        reference.child("images/${UUID.randomUUID()}").putFile(uri).addOnSuccessListener {
+        reference.child("images/${user!!.uid}").putFile(uri).addOnSuccessListener {
                       it.storage.downloadUrl.addOnSuccessListener { url ->
                           user.let { user
                               val updates = userProfileChangeRequest {

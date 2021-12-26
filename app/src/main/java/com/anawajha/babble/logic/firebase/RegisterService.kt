@@ -77,7 +77,7 @@ class RegisterService {
         private fun uploadImage(user:FirebaseUser, uri:Uri){
              var storage: FirebaseStorage = Firebase.storage
              var reference: StorageReference= storage.reference
-            reference.child("images/${UUID.randomUUID()}").putFile(uri).addOnSuccessListener {
+            reference.child("images/${user.uid}").putFile(uri).addOnSuccessListener {
                 it.storage.downloadUrl.addOnSuccessListener { url ->
                     user.let { user
                         val updates = userProfileChangeRequest {

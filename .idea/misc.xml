@@ -12,8 +12,9 @@
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_create_group.xml" value="0.176" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_login.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_main.xml" value="0.152" />
-        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_profile.xml" value="0.17291666666666666" />
+        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/activity_register.xml" value="0.17291666666666666" />
+        <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/chat_group_item.xml" value="0.17291666666666666" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/chat_item.xml" value="0.176" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/message_item.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/BabbleChat/app/src/main/res/layout/people_group_item.xml" value="0.536" />
