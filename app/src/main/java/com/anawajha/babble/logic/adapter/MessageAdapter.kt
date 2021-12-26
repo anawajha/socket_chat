@@ -43,13 +43,13 @@ class MessageAdapter(var activity: Activity, var messages:ArrayList<Message>):Re
                 holder.message.setTextColor(R.color.purple)
                 holder.container.gravity = Gravity.END
 
-                if (messages[position].message is String){
-                    holder.message.text = messages[position].message as String
+                if (messages[position].message != null){
+                    holder.message.text = messages[position].message!!
                     holder.message.visibility = View.VISIBLE
                     holder.imageMessage.visibility = View.GONE
 
-                }else if(messages[position].message is ByteArray){
-                    holder.imageMessage.setImageBitmap(ImageOperations.getImage(messages[position].message as ByteArray))
+                }else if(messages[position].imageMessage != null){
+                    holder.imageMessage.setImageBitmap(ImageOperations.getImage(messages[position].imageMessage!!))
                     holder.message.visibility = View.GONE
                     holder.imageMessage.visibility = View.VISIBLE
                 }

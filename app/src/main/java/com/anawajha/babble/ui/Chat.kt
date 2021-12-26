@@ -104,7 +104,7 @@ class Chat : AppCompatActivity() {
             if (text!!.isNotEmpty()){
                if (userId != null && destUser != null){
                    binding.edMessage.isEnabled = true
-                   mSocket!!.emit(Constants.MESSAGE, Message(userId!!,destUser!!,binding.edMessage.text.toString()))
+                   mSocket!!.emit(Constants.MESSAGE, Message(userId!!,destUser!!,binding.edMessage.text.toString(),null))
                }
             }else{
                 binding.edMessage.isEnabled = false
@@ -115,7 +115,7 @@ class Chat : AppCompatActivity() {
     private fun sendImageMessage(image:ByteArray){
         if (userId != null && destUser != null){
             binding.edMessage.isEnabled = true
-            mSocket!!.emit(Constants.MESSAGE, Message(userId!!,destUser!!,image))
+            mSocket!!.emit(Constants.MESSAGE, Message(userId!!,destUser!!,null ,image))
         }
     }// sendImageMessage
 

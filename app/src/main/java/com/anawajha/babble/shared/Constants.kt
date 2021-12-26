@@ -7,5 +7,6 @@ class Constants {
         var USER = "user"
         var SOURCE_ID = "source_id"
         var DESTINATION_ID = "destination_id"
+        var IMAGE_MESSAGE = "image_message"
     }
 }
