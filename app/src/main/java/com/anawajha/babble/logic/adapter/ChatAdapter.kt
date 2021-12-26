@@ -15,7 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.anawajha.babble.logic.socket.ImageOperations
 
 
-class ChatAdapter(var activity: Activity, var messages:ArrayList<Message>):RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
+class ChatAdapter(var activity: Activity, var messages:ArrayList<Message>,var userId:String?):RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
     class MessageViewHolder(binding:ChatItemBinding):RecyclerView.ViewHolder(binding.root){
         var imageMessage = binding.imgMessage
         var message = binding.tvMessage
@@ -29,7 +29,6 @@ class ChatAdapter(var activity: Activity, var messages:ArrayList<Message>):Recyc
 
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        val userId:String? = Firebase.auth.currentUser?.uid
         userId?.let {
             if (messages[position].source_id.equals(userId)){
                 holder.container.setBackgroundResource(R.drawable.sender_item)
