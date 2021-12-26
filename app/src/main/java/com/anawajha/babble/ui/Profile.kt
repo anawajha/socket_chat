@@ -17,28 +17,33 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
+import java.util.*
 
 
 class Profile : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private val user = Firebase.auth.currentUser
     private var imageUri:Uri? = null
-
+    lateinit var storage: FirebaseStorage
+    lateinit var reference: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        storage = Firebase.storage
+        reference = storage.reference
+
 
         user?.let {
             Picasso.get().load(user.photoUrl).placeholder(R.drawable.ic_user).into(binding.imgUser)
             binding.edName.setText(user.displayName)
             binding.edEmail.setText(user.email)
             binding.edPhoneUmber.setText(user.phoneNumber)
-            Log.d("Test", user.photoUrl.toString())
            if (!user.isEmailVerified){
                binding.edEmail.error = "Not verified"
            }
@@ -82,7 +87,7 @@ class Profile : AppCompatActivity() {
                 userProfileChangeRequest {
                     displayName = name
                     if (imageUri != null){
-                        photoUri = imageUri
+                        uploadImage(imageUri!!)
                     }
                 }
             }
@@ -97,5 +102,20 @@ class Profile : AppCompatActivity() {
         }
         user?.reload()
     }// updateProfile
+
+
+    private fun uploadImage(uri:Uri){
+        reference.child("images/${UUID.randomUUID()}").putFile(uri).addOnSuccessListener {
+                      it.storage.downloadUrl.addOnSuccessListener { url ->
+                          user.let { user
+                              val updates = userProfileChangeRequest {
+                                  photoUri = url
+                                  Log.d("URL",url.toString())
+                              }
+                              it?.updateProfile(updates)
+                      }
+            }
+        }
+    }// uploadImage
 
 }// class

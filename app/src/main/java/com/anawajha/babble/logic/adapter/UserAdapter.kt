@@ -13,7 +13,7 @@ import com.anawajha.babble.shared.Constants
 import com.anawajha.babble.ui.Chat
 import com.squareup.picasso.Picasso
 
-class UserAdapter(var activity: Activity,var users:ArrayList<User>, click:View.OnClickListener):RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(var activity: Activity,var users:ArrayList<User>):RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     class UserViewHolder(binding:ChatItemBinding):RecyclerView.ViewHolder(binding.root) {
         var image = binding.imgUser
         var userName = binding.tvUserName

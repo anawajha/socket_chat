@@ -17,7 +17,11 @@ import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import java.lang.Exception
+import java.util.*
 
 class RegisterService {
 
@@ -55,8 +59,8 @@ class RegisterService {
             user?.let {
                val profileUpdates = userProfileChangeRequest {
                    setDisplayName(name)
-                   setPhotoUri(userImage)
                }
+                uploadImage(it,userImage)
 
                 it.updateProfile(profileUpdates).addOnCompleteListener {
                     if (it.isSuccessful){
@@ -69,6 +73,22 @@ class RegisterService {
                 }
             }
         } // complete profile
+
+        private fun uploadImage(user:FirebaseUser, uri:Uri){
+             var storage: FirebaseStorage = Firebase.storage
+             var reference: StorageReference= storage.reference
+            reference.child("images/${UUID.randomUUID()}").putFile(uri).addOnSuccessListener {
+                it.storage.downloadUrl.addOnSuccessListener { url ->
+                    user.let { user
+                        val updates = userProfileChangeRequest {
+                            photoUri = url
+                            Log.d("URL",url.toString())
+                        }
+                        it.updateProfile(updates)
+                    }
+                }
+            }
+        }// uploadImage
 
     }// companion object
 
