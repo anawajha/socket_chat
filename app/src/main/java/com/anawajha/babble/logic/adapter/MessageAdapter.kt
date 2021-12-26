@@ -42,10 +42,12 @@ class MessageAdapter(var activity: Activity, var messages:ArrayList<Message>):Re
                 holder.container.setBackgroundResource(R.drawable.sender_item)
                 holder.message.setTextColor(R.color.purple)
                 holder.container.gravity = Gravity.END
+
                 if (messages[position].message is String){
                     holder.message.text = messages[position].message as String
                     holder.message.visibility = View.VISIBLE
                     holder.imageMessage.visibility = View.GONE
+
                 }else if(messages[position].message is ByteArray){
                     holder.imageMessage.setImageBitmap(ImageOperations.getImage(messages[position].message as ByteArray))
                     holder.message.visibility = View.GONE

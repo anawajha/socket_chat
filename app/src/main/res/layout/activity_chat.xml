@@ -35,8 +35,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@+id/btn_back"
-                android:background="@drawable/round_image"
-                android:scaleType="center"
                 android:padding="5dp"
                 android:src="@drawable/ic_user" />
 
@@ -52,6 +50,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_sender_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -67,6 +66,7 @@
 
 
                 <TextView
+                    android:id="@+id/isTyping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"

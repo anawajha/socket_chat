@@ -2,7 +2,7 @@ package com.anawajha.babble.logic.model
 
 import org.json.JSONObject
 
-data class User(var id:String, var name:String, var email:String,var image:String) {
+data class User(var id:String, var name:String, var email:String,var image:String){
 
     fun encode(): JSONObject {
         var user = JSONObject()
@@ -13,7 +13,9 @@ data class User(var id:String, var name:String, var email:String,var image:Strin
         return user
     }// encode
 
-    fun decode(obj: JSONObject):User{
-        return User(obj.getString("id"),obj.getString("name").toString(),obj.getString("email"),obj.getString("image"))
-    }// decode
+ companion object{
+     fun decode(obj: JSONObject):User{
+         return User(obj.getString("id"),obj.getString("name").toString(),obj.getString("email"),obj.getString("image"))
+     }// decode
+ }// companion object
 }// User class

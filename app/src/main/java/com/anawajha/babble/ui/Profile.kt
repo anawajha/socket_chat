@@ -18,11 +18,15 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
+
 
 class Profile : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private val user = Firebase.auth.currentUser
     private var imageUri:Uri? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
