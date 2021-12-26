@@ -29,6 +29,7 @@ data class UserAddedAdapter(var activity: Context, var users:ArrayList<User>):Re
 
         holder.imgCancel.setOnClickListener {
             users.removeAt(position)
+            notifyItemRemoved(position)
         }
     }// onBindViewHolder
 

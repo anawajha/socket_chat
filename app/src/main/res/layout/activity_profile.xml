@@ -176,27 +176,6 @@
                             android:drawableEnd="@drawable/ic_edit_purple"/>
 
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Status"
-                            android:layout_marginTop="46dp"
-                            android:textColor="@color/grey2"
-                            android:textStyle="bold"
-                            android:textSize="13sp" />
-
-                        <EditText
-                            android:id="@+id/ed_bio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text"
-                            android:textStyle="bold"
-                            android:textSize="13sp"
-                            android:text="Private"
-                            android:textColor="@color/purple"
-                            android:drawableEnd="@drawable/ic_edit_purple"/>
-
-
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_save"
                             android:layout_width="match_parent"
