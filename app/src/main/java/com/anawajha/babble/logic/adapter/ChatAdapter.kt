@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.anawajha.babble.R
 import com.anawajha.babble.databinding.ChatItemBinding
-import com.anawajha.babble.databinding.MessageItemBinding
 import com.anawajha.babble.logic.model.Message
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
