@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.anawajha.babble.R
+import com.anawajha.babble.databinding.ChatItemBinding
 import com.anawajha.babble.databinding.MessageItemBinding
 import com.anawajha.babble.logic.model.Message
 import com.google.firebase.auth.ktx.auth
@@ -16,14 +17,14 @@ import com.anawajha.babble.logic.socket.ImageOperations
 
 
 class ChatAdapter(var activity: Activity, var messages:ArrayList<Message>):RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
-    class MessageViewHolder(binding:MessageItemBinding):RecyclerView.ViewHolder(binding.root){
+    class MessageViewHolder(binding:ChatItemBinding):RecyclerView.ViewHolder(binding.root){
         var imageMessage = binding.imgMessage
         var message = binding.tvMessage
         var container = binding.loMessageContainer
     }// MessageViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        val binding = MessageItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ChatItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MessageViewHolder(binding)
     }// onCreateViewHolder
 
